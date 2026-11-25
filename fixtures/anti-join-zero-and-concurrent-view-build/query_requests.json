@@ -1,0 +1,13 @@
+{
+  "base_position": 8,
+  "old": {
+    "eligible": "SELECT w.district, COUNT(DISTINCT l.person) AS people FROM workshops AS w JOIN trade_tracks AS t ON w.id=t.workshop JOIN licenses AS l ON t.trade=l.trade WHERE w.active=1 AND l.active=1 GROUP BY w.district",
+    "capacity": "SELECT w.district, SUM(w.seats) AS seats FROM workshops AS w WHERE w.active=1 GROUP BY w.district",
+    "occupied": "SELECT w.district, SUM(a.places) AS used FROM workshops AS w LEFT JOIN allocated AS a ON w.id=a.workshop WHERE w.active=1 GROUP BY w.district"
+  },
+  "new": {
+    "add_terms_for_workshops": [
+      "NOT EXISTS (SELECT 1 FROM pauses AS p WHERE p.workshop=w.id)"
+    ]
+  }
+}

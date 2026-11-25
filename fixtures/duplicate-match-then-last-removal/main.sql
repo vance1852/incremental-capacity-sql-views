@@ -1,0 +1,11 @@
+BEGIN TRANSACTION;
+CREATE TABLE "allocated" (id TEXT PRIMARY KEY, workshop TEXT, places INTEGER);
+CREATE TABLE "licenses" (id TEXT PRIMARY KEY, person TEXT, trade TEXT, active INTEGER);
+INSERT INTO "licenses" VALUES('c1','r','care',1);
+INSERT INTO "licenses" VALUES('c2','r','care',1);
+CREATE TABLE "pauses" (id TEXT PRIMARY KEY, workshop TEXT, reason TEXT);
+CREATE TABLE "trade_tracks" (workshop TEXT, trade TEXT, PRIMARY KEY(workshop,trade));
+INSERT INTO "trade_tracks" VALUES('w','care');
+CREATE TABLE "workshops" (id TEXT PRIMARY KEY, district TEXT, seats INTEGER, active INTEGER);
+INSERT INTO "workshops" VALUES('w','west',4,1);
+COMMIT;

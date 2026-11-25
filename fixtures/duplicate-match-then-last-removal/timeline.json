@@ -1,0 +1,54 @@
+[
+  {
+    "pos": 1,
+    "kind": "source_commit",
+    "source_pos": 1,
+    "tx": "a",
+    "ops": [
+      [
+        "delete",
+        "licenses",
+        "c1",
+        [
+          "c1",
+          "r",
+          "care",
+          1
+        ]
+      ]
+    ]
+  },
+  {
+    "pos": 2,
+    "kind": "read",
+    "client": "console",
+    "definition": "old",
+    "district": "west"
+  },
+  {
+    "pos": 3,
+    "kind": "source_commit",
+    "source_pos": 3,
+    "tx": "b",
+    "ops": [
+      [
+        "delete",
+        "licenses",
+        "c2",
+        [
+          "c2",
+          "r",
+          "care",
+          1
+        ]
+      ]
+    ]
+  },
+  {
+    "pos": 4,
+    "kind": "read",
+    "client": "console",
+    "definition": "old",
+    "district": "west"
+  }
+]

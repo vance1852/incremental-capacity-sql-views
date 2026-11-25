@@ -1,0 +1,138 @@
+[
+  {
+    "pos": 8,
+    "kind": "read",
+    "client": "meeting",
+    "definition": "old",
+    "district": "east",
+    "until": 30
+  },
+  {
+    "pos": 9,
+    "kind": "source_commit",
+    "source_pos": 9,
+    "tx": "t9",
+    "ops": [
+      [
+        "delete",
+        "pauses",
+        "s1",
+        [
+          "s1",
+          "w2",
+          "equipment"
+        ]
+      ],
+      [
+        "update",
+        "workshops",
+        "w2",
+        [
+          "w2",
+          "east",
+          3,
+          1
+        ],
+        [
+          "w2",
+          "east",
+          4,
+          1
+        ]
+      ]
+    ]
+  },
+  {
+    "pos": 10,
+    "kind": "register",
+    "definition": "new"
+  },
+  {
+    "pos": 11,
+    "kind": "start_build",
+    "definition": "new"
+  },
+  {
+    "pos": 12,
+    "kind": "source_commit",
+    "source_pos": 12,
+    "tx": "t12",
+    "ops": [
+      [
+        "delete",
+        "pauses",
+        "s2",
+        [
+          "s2",
+          "w2",
+          "staff"
+        ]
+      ],
+      [
+        "delete",
+        "licenses",
+        "l2",
+        [
+          "l2",
+          "p1",
+          "weld",
+          1
+        ]
+      ],
+      [
+        "update",
+        "allocated",
+        "a2",
+        [
+          "a2",
+          "w2",
+          2
+        ],
+        [
+          "a2",
+          "w2",
+          3
+        ]
+      ]
+    ]
+  },
+  {
+    "pos": 13,
+    "kind": "restart",
+    "component": "views"
+  },
+  {
+    "pos": 14,
+    "kind": "activate",
+    "definition": "new"
+  },
+  {
+    "pos": 15,
+    "kind": "read",
+    "client": "meeting",
+    "definition": "old",
+    "district": "east",
+    "min_source_pos": 9
+  },
+  {
+    "pos": 16,
+    "kind": "read",
+    "client": "console",
+    "definition": "new",
+    "district": "east",
+    "min_source_pos": 12
+  },
+  {
+    "pos": 17,
+    "kind": "retry_commit",
+    "tx": "t12",
+    "source_pos": 12
+  },
+  {
+    "pos": 18,
+    "kind": "read",
+    "client": "console",
+    "definition": "new",
+    "district": "south"
+  }
+]

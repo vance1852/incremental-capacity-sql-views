@@ -1,0 +1,19 @@
+{
+  "databases": {
+    "main": {
+      "file": "main.sql",
+      "rows": {
+        "workshops": 51,
+        "trade_tracks": 52,
+        "licenses": 52,
+        "allocated": 2,
+        "pauses": 2
+      }
+    }
+  },
+  "events": 11,
+  "documents": [
+    "query_requests.json"
+  ],
+  "settings": {}
+}
